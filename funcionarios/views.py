@@ -6,3 +6,6 @@ def cadastrar(request):
 
 def home(request):
     return render(request, './home.html')
+
+def tabela(request):
+    return render (request, 'tabela.html')

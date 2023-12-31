@@ -1,0 +1,44 @@
+from date
+
+{% extends './base.html' %}
+
+{% block conteudo %}
+<br>
+<br>
+<table class="table table-bordered">
+    <thead>
+        <td>Logo engeman</td>
+        <td colspan="6"><div class="container text-center"><p>Engeman manutenção, instalação e telecom. Ltda</p>
+        <p>Relação de Condução Mensal</p></div></td>
+        <tr>
+        <td colspan="12"><div class="">
+            Funcionario: nome do funcionario   Mês: Dezembro
+        </div>
+        </td>
+        </tr>
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Metrô</th>
+        <th scope="col">Ônibus</th>
+        <th scope="col">Intermunicipal</th>
+        <th scope="col">Trem</th>
+        <th scope="col">Bilhete único</th>
+        <th scope="col"> Sub-total</th>
+        <th scope="col"> De/Para</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">01/01/2024</th>
+        <td></td>
+        <td>8,60</td>
+        <td></td>
+        <td>10,00</td>
+        <td></td>
+        <td>18,60</td>
+        <td>CASA/TRABALHO E TRABALHO/CASA</td>
+      </tr>
+    </tbody>
+  </table>
+
+{% endblock %}
