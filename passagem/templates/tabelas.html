@@ -1,0 +1,49 @@
+<table> 
+    <thead> 
+        <tr> 
+            <th>Data</th> 
+            <th>Metrô</th> 
+            <th>Ônibus</th> 
+            <th>Intermunicipal</th> 
+            <th>Trem</th> 
+            <th>Bilhete Único</th> 
+            <th>Sub-total</th> 
+            <th>De/Para</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        {% for passagem in passagens %} 
+            <tr> 
+                <td>{{ passagem.data }}</td> 
+                <td>{% if passagem.transporte == "M" %}{{ passagem.valor }}{% endif %}</td> 
+                <td>{% if passagem.transporte == "O" %}{{ passagem.valor }}{% endif %}</td> 
+                <td>{% if passagem.transporte == "I" %}{{ passagem.valor }}{% endif %}</td> 
+                <td>{% if passagem.transporte == "T" %}{{ passagem.valor }}{% endif %}</td> 
+                <td>{% if passagem.transporte == "B" %}{{ passagem.valor }}{% endif %}</td> 
+                <td>{{ passagem.valor }}</td> <td>{{ passagem.origem }}/{{ passagem.destino }}</td>
+             </tr> 
+        {% endfor %} 
+    </tbody> 
+    <tfoot> 
+        <tr>
+            <td colspan="6">Total</td>
+            <td>
+                {% with ""|center:1 as total %}
+                    {% for passagem in passagens %}
+                        {% if forloop.first %}
+                            {% with passagem.valor as total %}
+                            {% endwith %}
+                        {% else %}
+                            {% with total|add:passagem.valor as total %}
+                            {% endwith %}
+                        {% endif %}
+                        {% if forloop.last %}
+                            {{ total }}
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+            </td>
+            <td></td>
+        </tr>        
+    </tfoot> 
+</table>
