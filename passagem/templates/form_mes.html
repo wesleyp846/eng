@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'pega_mes' %}">
+        {% csrf_token %}
+        <label>Nome</label>
+        <input type="number" name="mes" class="form-control" placeholder="Mes M">
+        <br>
+        <label>E-mail</label>
+        <input type="number" name="ano" class="form-control" placeholder="Ano AAAA">
+        <br>
+        <input class="btn btn-info btn-lg" type="submit" value="Enviar">
+        <a class="btn btn-warning btn-lg" href="{% url 'tabela' %}">Login</a>
+    </form>
+</body>
+</html>

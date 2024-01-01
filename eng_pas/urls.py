@@ -4,7 +4,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', views.home, name='home'),
     path('funcionarios/', include('funcionarios.urls')),
     path('', include('funcionarios.urls')),
     path('passagem/', include('passagem.urls')),
