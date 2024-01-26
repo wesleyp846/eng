@@ -1,3 +1,5 @@
+# Projeto em pausa
+
 # Titulo
 Espaço ``Subtitulo``  Framework [Django](https://docs.djangoproject.com/en/5.0/)
 
